@@ -35,19 +35,19 @@
     },
     "clothing": {
       "count": 2,
-      "inventoryValue": 18552.54
+      "inventoryValue": 18547.14
     },
     "home": {
       "count": 3,
-      "inventoryValue": 69861.44
+      "inventoryValue": 69583.24
     },
     "books": {
       "count": 4,
-      "inventoryValue": 202331.61
+      "inventoryValue": 198642.67
     },
     "sports": {
       "count": 8,
-      "inventoryValue": 126423.64
+      "inventoryValue": 125868.09
     }
   }
 }
