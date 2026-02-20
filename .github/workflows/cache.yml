@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 18
 
       - name: Cache dependencies
         id: cache-step
@@ -26,8 +26,8 @@ jobs:
           key: cache-c7df70a
 
       - name: Install dependencies
-        run: npm install
-        continue-on-error: true
+        run: npm install || true
 
       - name: prime-cache-c7df70a
-        run: echo "Cache hit status: ${{ steps.cache-step.outputs.cache-hit }}"
+        run: |
+          echo Cache hit status: ${{ steps.cache-step.outputs.cache-hit }}
