@@ -1,4 +1,4 @@
-name: IITM GitHub Action Demo
+name: IITM Combined Actions
 
 on:
   push:
@@ -14,3 +14,28 @@ jobs:
 
       - name: 22f3000908@ds.study.iitm.ac.in
         run: echo "Hello from IITM GitHub Action!"
+
+  cache-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Cache dependencies
+        id: cache-step
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: cache-c7df70a
+
+      - name: Install dependencies
+        run: npm install
+        continue-on-error: true
+
+      - name: prime-cache-c7df70a
+        run: echo "Cache hit status: ${{ steps.cache-step.outputs.cache-hit }}"
